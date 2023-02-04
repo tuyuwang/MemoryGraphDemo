@@ -27,20 +27,25 @@
 }
 
 - (void)testExample {
-    // UI tests must launch the application that they test.
     XCUIApplication *app = [[XCUIApplication alloc] init];
-    [app launch];
 
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    XCTMeasureOptions *options = [[XCTMeasureOptions alloc] init];
+    options.invocationOptions = XCTMeasurementInvocationManuallyStart;
+    
+    [self measureWithMetrics:@[[[XCTMemoryMetric alloc] initWithApplication:app]] options:options block:^{
+        [app launch];
+        [self startMeasuring];
+        
+        [app/*@START_MENU_TOKEN@*/.staticTexts[@"Click Me"]/*[[".buttons[@\"Click Me\"].staticTexts[@\"Click Me\"]",".staticTexts[@\"Click Me\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/ tap];
+
+        XCUIElementQuery *tablesQuery = app.tables;
+        [tablesQuery.staticTexts[@"Large Buffers"] tap];
+        [tablesQuery/*@START_MENU_TOKEN@*/.staticTexts[@"Retain Cycles"]/*[[".cells.staticTexts[@\"Retain Cycles\"]",".staticTexts[@\"Retain Cycles\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/ tap];
+        [tablesQuery/*@START_MENU_TOKEN@*/.staticTexts[@"Indirect Retain Cycles"]/*[[".cells.staticTexts[@\"Indirect Retain Cycles\"]",".staticTexts[@\"Indirect Retain Cycles\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/ tap];
+        [tablesQuery/*@START_MENU_TOKEN@*/.staticTexts[@"Dynamic Indirect Retain Cycles"]/*[[".cells.staticTexts[@\"Dynamic Indirect Retain Cycles\"]",".staticTexts[@\"Dynamic Indirect Retain Cycles\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/ tap];
+        XCTAssertTrue([tablesQuery/*@START_MENU_TOKEN@*/.staticTexts[@"Large Buffers"]/*[[".cells.staticTexts[@\"Large Buffers\"]",".staticTexts[@\"Large Buffers\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/waitForExistenceWithTimeout:5]);
+    }];
 }
 
-- (void)testLaunchPerformance {
-    if (@available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *)) {
-        // This measures how long it takes to launch your application.
-        [self measureWithMetrics:@[[[XCTApplicationLaunchMetric alloc] init]] block:^{
-            [[[XCUIApplication alloc] init] launch];
-        }];
-    }
-}
 
 @end
