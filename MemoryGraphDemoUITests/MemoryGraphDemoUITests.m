@@ -26,9 +26,8 @@
     // Put teardown code here. This method is called after the invocation of each test method in the class.
 }
 
-- (void)testExample {
+- (void)testPerformanceExample {
     XCUIApplication *app = [[XCUIApplication alloc] init];
-
     XCTMeasureOptions *options = [[XCTMeasureOptions alloc] init];
     options.invocationOptions = XCTMeasurementInvocationManuallyStart;
     
@@ -43,9 +42,23 @@
         [tablesQuery/*@START_MENU_TOKEN@*/.staticTexts[@"Retain Cycles"]/*[[".cells.staticTexts[@\"Retain Cycles\"]",".staticTexts[@\"Retain Cycles\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/ tap];
         [tablesQuery/*@START_MENU_TOKEN@*/.staticTexts[@"Indirect Retain Cycles"]/*[[".cells.staticTexts[@\"Indirect Retain Cycles\"]",".staticTexts[@\"Indirect Retain Cycles\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/ tap];
         [tablesQuery/*@START_MENU_TOKEN@*/.staticTexts[@"Dynamic Indirect Retain Cycles"]/*[[".cells.staticTexts[@\"Dynamic Indirect Retain Cycles\"]",".staticTexts[@\"Dynamic Indirect Retain Cycles\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/ tap];
-        XCTAssertTrue([tablesQuery/*@START_MENU_TOKEN@*/.staticTexts[@"Large Buffers"]/*[[".cells.staticTexts[@\"Large Buffers\"]",".staticTexts[@\"Large Buffers\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/waitForExistenceWithTimeout:5]);
+        XCTAssertFalse([tablesQuery.staticTexts[@"TTT"]waitForExistenceWithTimeout:3]);
     }];
 }
 
+- (void)testLLDBExample {
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+    app.launchEnvironment = @{@"MallocStackLogging": @"YES"};
+    [app launch];
+    [app/*@START_MENU_TOKEN@*/.staticTexts[@"Click Me"]/*[[".buttons[@\"Click Me\"].staticTexts[@\"Click Me\"]",".staticTexts[@\"Click Me\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/ tap];
+
+    XCUIElementQuery *tablesQuery = app.tables;
+    [tablesQuery.staticTexts[@"Large Buffers"] tap];
+    [tablesQuery/*@START_MENU_TOKEN@*/.staticTexts[@"Retain Cycles"]/*[[".cells.staticTexts[@\"Retain Cycles\"]",".staticTexts[@\"Retain Cycles\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/ tap];
+    [tablesQuery/*@START_MENU_TOKEN@*/.staticTexts[@"Indirect Retain Cycles"]/*[[".cells.staticTexts[@\"Indirect Retain Cycles\"]",".staticTexts[@\"Indirect Retain Cycles\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/ tap];
+    [tablesQuery/*@START_MENU_TOKEN@*/.staticTexts[@"Dynamic Indirect Retain Cycles"]/*[[".cells.staticTexts[@\"Dynamic Indirect Retain Cycles\"]",".staticTexts[@\"Dynamic Indirect Retain Cycles\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/ tap];
+    [app.tables/*@START_MENU_TOKEN@*/.staticTexts[@"LLDB Export Memory Graph File"]/*[[".cells.staticTexts[@\"LLDB Export Memory Graph File\"]",".staticTexts[@\"LLDB Export Memory Graph File\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/ tap];
+        
+}
 
 @end

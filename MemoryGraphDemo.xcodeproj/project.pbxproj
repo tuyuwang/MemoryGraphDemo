@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		11948D23EBDE5C3369E1B4EC /* Pods_MemoryGraphDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B92F2DC32D117782071331 /* Pods_MemoryGraphDemoTests.framework */; };
-		178E80862312952B4F3E0716 /* Pods_MemoryGraphDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82B47A26AD109D3B9EC05231 /* Pods_MemoryGraphDemo.framework */; };
-		C7C428976F8AEE5D3EED73DC /* Pods_MemoryGraphDemo_MemoryGraphDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 303F2C0C61C4522E3E1827C6 /* Pods_MemoryGraphDemo_MemoryGraphDemoUITests.framework */; };
+		43D81DDFC926967B396BD9F8 /* Pods_MemoryGraphDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B92F2DC32D117782071331 /* Pods_MemoryGraphDemoTests.framework */; };
+		C2447BF3CA2B647A0510BB20 /* Pods_MemoryGraphDemo_MemoryGraphDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 303F2C0C61C4522E3E1827C6 /* Pods_MemoryGraphDemo_MemoryGraphDemoUITests.framework */; };
+		E9E8DE648DF0ABF2A36BF345 /* Pods_MemoryGraphDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82B47A26AD109D3B9EC05231 /* Pods_MemoryGraphDemo.framework */; };
 		FAEF558D296F0D4C00DAF08A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEF558C296F0D4C00DAF08A /* AppDelegate.m */; };
 		FAEF5590296F0D4C00DAF08A /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEF558F296F0D4C00DAF08A /* SceneDelegate.m */; };
 		FAEF5593296F0D4D00DAF08A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEF5592296F0D4D00DAF08A /* ViewController.m */; };
@@ -79,7 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				178E80862312952B4F3E0716 /* Pods_MemoryGraphDemo.framework in Frameworks */,
+				E9E8DE648DF0ABF2A36BF345 /* Pods_MemoryGraphDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,7 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11948D23EBDE5C3369E1B4EC /* Pods_MemoryGraphDemoTests.framework in Frameworks */,
+				43D81DDFC926967B396BD9F8 /* Pods_MemoryGraphDemoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7C428976F8AEE5D3EED73DC /* Pods_MemoryGraphDemo_MemoryGraphDemoUITests.framework in Frameworks */,
+				C2447BF3CA2B647A0510BB20 /* Pods_MemoryGraphDemo_MemoryGraphDemoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,7 +122,6 @@
 				4E6D9A3D222B4BDCF214F7CE /* Pods-MemoryGraphDemoTests.debug.xcconfig */,
 				14371EF86B4C2BB2AB482B1C /* Pods-MemoryGraphDemoTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -206,7 +205,7 @@
 				FAEF5584296F0D4C00DAF08A /* Sources */,
 				FAEF5585296F0D4C00DAF08A /* Frameworks */,
 				FAEF5586296F0D4C00DAF08A /* Resources */,
-				1C08414D4E79EB8641A42130 /* [CP] Embed Pods Frameworks */,
+				AEFB9E757FA2AC6B2ADD7CA3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -244,7 +243,7 @@
 				FAEF55A9296F0D4D00DAF08A /* Sources */,
 				FAEF55AA296F0D4D00DAF08A /* Frameworks */,
 				FAEF55AB296F0D4D00DAF08A /* Resources */,
-				D3A34C7DABFF3691FF9F633C /* [CP] Embed Pods Frameworks */,
+				723236614B7D9C064287718E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -326,23 +325,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1C08414D4E79EB8641A42130 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MemoryGraphDemo/Pods-MemoryGraphDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MemoryGraphDemo/Pods-MemoryGraphDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MemoryGraphDemo/Pods-MemoryGraphDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		563CCB2C331085CA992FB562 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -363,6 +345,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		723236614B7D9C064287718E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MemoryGraphDemo-MemoryGraphDemoUITests/Pods-MemoryGraphDemo-MemoryGraphDemoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MemoryGraphDemo-MemoryGraphDemoUITests/Pods-MemoryGraphDemo-MemoryGraphDemoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MemoryGraphDemo-MemoryGraphDemoUITests/Pods-MemoryGraphDemo-MemoryGraphDemoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AEFB9E757FA2AC6B2ADD7CA3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MemoryGraphDemo/Pods-MemoryGraphDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MemoryGraphDemo/Pods-MemoryGraphDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MemoryGraphDemo/Pods-MemoryGraphDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CA9A86B3B5EC91227DAC91B3 /* [CP] Check Pods Manifest.lock */ = {
@@ -407,23 +423,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D3A34C7DABFF3691FF9F633C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MemoryGraphDemo-MemoryGraphDemoUITests/Pods-MemoryGraphDemo-MemoryGraphDemoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MemoryGraphDemo-MemoryGraphDemoUITests/Pods-MemoryGraphDemo-MemoryGraphDemoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MemoryGraphDemo-MemoryGraphDemoUITests/Pods-MemoryGraphDemo-MemoryGraphDemoUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

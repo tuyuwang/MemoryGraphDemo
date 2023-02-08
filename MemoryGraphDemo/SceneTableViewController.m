@@ -107,6 +107,10 @@
     //    [imageView sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:nil options:SDWebImageAvoidDecodeImage];
 }
 
+- (void)trigerLLDBExportMemoryGraphFile {
+    NSLog(@"Export Memory Graph ...");
+}
+
 #pragma mark - Lazy load
 
 - (NSArray<SceneModel *> *)dataSource {
@@ -116,7 +120,8 @@
         @{@"No Active References":@"trigerNoActiveReferences"},
         @{@"Indirect Retain Cycles":@"trigerIndirectRetainCycles"},
         @{@"Dynamic Indirect Retain Cycles":@"trigerDynamicIndirectRetainCycles"},
-        @{@"Large Buffers":@"trigerLargeBuffers"}];
+        @{@"Large Buffers":@"trigerLargeBuffers"},
+        @{@"LLDB Export Memory Graph File":@"trigerLLDBExportMemoryGraphFile"}];
         
         NSMutableArray *mutableDataSource = [NSMutableArray array];
         
