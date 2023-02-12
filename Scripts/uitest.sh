@@ -1,12 +1,13 @@
 #!/bin/bash
 
 EXECUTE_NAME="MemoryGraphDemo"
+SCHEME="MemoryGraphDemoUITests"
 ROOT_PATH="../"
-TRIGER_CMD=""trigerLLDBExportMemoryGraphFile""
+TRIGER_CMD="trigerLLDBExportMemoryGraphFile"
 OUT_PUT="./"
 
-/usr/bin/expect ./emg.sh $EXECUTE_NAME $TRIGGER_CMD $OUT_PUT &
+/usr/bin/expect ./emg.sh $EXECUTE_NAME $TRIGER_CMD $OUT_PUT &
 
 cd $ROOT_PATH
-xcodebuild test -project $EXECUTE_NAME.xcodeproj -scheme $EXECUTE_NAME -destination platform="iOS Simulator",name="iPhone 14"
+xcodebuild test -workspace $EXECUTE_NAME.xcworkspace -scheme $SCHEME -destination platform="iOS Simulator",name="iPhone 14"
 

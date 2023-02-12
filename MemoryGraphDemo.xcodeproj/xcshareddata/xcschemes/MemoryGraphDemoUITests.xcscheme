@@ -39,6 +39,9 @@
                   Identifier = "MemoryGraphDemoUITests/testPerfomance">
                </Test>
                <Test
+                  Identifier = "MemoryGraphDemoUITests/testPerformanceExample">
+               </Test>
+               <Test
                   Identifier = "MemoryGraphDemoUITestsLaunchTests">
                </Test>
             </SkippedTests>

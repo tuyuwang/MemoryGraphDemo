@@ -50,6 +50,9 @@
             </BuildableReference>
             <SkippedTests>
                <Test
+                  Identifier = "MemoryGraphDemoUITests/testLLDBExample">
+               </Test>
+               <Test
                   Identifier = "MemoryGraphDemoUITests/testPerfomance">
                </Test>
                <Test
@@ -79,6 +82,19 @@
             ReferencedContainer = "container:MemoryGraphDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <CommandLineArguments>
+         <CommandLineArgument
+            argument = "enablePerformanceTestsDiagnostics=YES"
+            isEnabled = "YES">
+         </CommandLineArgument>
+      </CommandLineArguments>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "enablePerformanceTestsDiagnostics"
+            value = "YES"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
       <AdditionalOptions>
          <AdditionalOption
             key = "MallocStackLogging"
