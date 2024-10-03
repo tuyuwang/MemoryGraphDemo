@@ -1,0 +1,111 @@
+leaks Report Version: 4.0, multi-line stacks
+Process 11745: 73641 nodes malloced for 20901 KB
+Process 11745: 7 leaks for 208 total leaked bytes.
+
+STACK OF 1 INSTANCE OF 'ROOT CYCLE: <SomeItem>':
+28  dyld                                  0x204ec42cd start + 1805
+27  dyld_sim                              0x10d342478 start_sim + 10
+26  com.nj.-.MemoryGraphDemo              0x104caf9ae main + 110
+25  com.apple.UIKitCore                   0x138331b7c UIApplicationMain + 123
+24  com.apple.UIKitCore                   0x13832cc3b -[UIApplication _run] + 875
+23  com.apple.GraphicsServices            0x11f2760cb GSEventRunModal + 137
+22  com.apple.CoreFoundation              0x10d658fb3 CFRunLoopRunSpecific + 536
+21  com.apple.CoreFoundation              0x10d659774 __CFRunLoopRun + 960
+20  com.apple.CoreFoundation              0x10d65f065 __CFRunLoopDoSources0 + 203
+19  com.apple.CoreFoundation              0x10d65f860 __CFRunLoopDoSource0 + 157
+18  com.apple.CoreFoundation              0x10d65f91e __CFRUNLOOP_IS_CALLING_OUT_TO_A_SOURCE0_PERFORM_FUNCTION__ + 17
+17  com.apple.UIKitCore                   0x1382117a4 runloopSourceCallback + 68
+16  com.apple.UIKitCore                   0x13821267f schedulerStepScheduledMainSection + 165
+15  com.apple.UIKitCore                   0x1374d738c _UIUpdateSequenceRun + 55
+14  com.apple.UIKitCore                   0x138212d42 __setupUpdateSequence_block_invoke_2 + 437
+13  com.apple.UIKitCore                   0x13832b40f _UIApplicationFlushCATransaction + 74
+12  com.apple.UIKitCore                   0x13832b311 _cleanUpAfterCAFlushAndRunDeferredBlocks + 71
+11  com.apple.UIKitCore                   0x13833c8b7 _runAfterCACommitDeferredBlocks + 409
+10  com.apple.UIKitCore                   0x138a08010 -[_UIAfterCACommitQueue flush] + 189
+9   com.apple.UIKitCore                   0x138a07b2a -[_UIAfterCACommitBlock run] + 55
+8   com.apple.UIKitCore                   0x13862c62f -[UITableView _userSelectRowAtPendingSelectionIndexPath:] + 247
+7   com.apple.UIKitCore                   0x13862c51d -[UITableView _userSelectRowAtPendingSelectionIndexPath:animatedSelection:] + 384
+6   com.apple.UIKitCore                   0x13862c128 -[UITableView _selectRowAtIndexPath:animated:scrollPosition:notifyDelegate:isCellMultiSelect:deselectPrevious:performCustomSelectionAction:] + 2217
+5   com.nj.-.MemoryGraphDemo              0x104caecaf -[SceneTableViewController tableView:didSelectRowAtIndexPath:] + 255
+4   com.nj.-.MemoryGraphDemo              0x104caee5c -[SceneTableViewController trigerIndirectRetainCycles] + 44
+3   libobjc.A.dylib                       0x10d2d0d49 +[NSObject new] + 18
+2   libobjc.A.dylib                       0x10d2c9ddd _objc_rootAllocWithZone + 47
+1   libsystem_malloc.dylib                0x111200117 _calloc + 107
+0   libsystem_malloc.dylib                0x11121793e _malloc_zone_calloc_instrumented_or_legacy + 269 
+====
+    4 (112 bytes) ROOT CYCLE: <SomeItem 0x600001029b30> [16]
+       3 (96 bytes) __strong _helper --> ROOT CYCLE: <LeaksHelper 0x600001293300> [32]
+          2 (64 bytes) __strong _items --> ROOT CYCLE: <NSMutableArray 0x600001cbd740> [48]
+             1 (16 bytes) ROOT CYCLE: <NSMutableArray (Storage) 0x600001024310> [16]
+                CYCLE BACK TO <SomeItem 0x600001029b30> [16]
+
+STACK OF 1 INSTANCE OF 'ROOT CYCLE: <LeaksHelper>':
+28  dyld                                  0x204ec42cd start + 1805
+27  dyld_sim                              0x10d342478 start_sim + 10
+26  com.nj.-.MemoryGraphDemo              0x104caf9ae main + 110
+25  com.apple.UIKitCore                   0x138331b7c UIApplicationMain + 123
+24  com.apple.UIKitCore                   0x13832cc3b -[UIApplication _run] + 875
+23  com.apple.GraphicsServices            0x11f2760cb GSEventRunModal + 137
+22  com.apple.CoreFoundation              0x10d658fb3 CFRunLoopRunSpecific + 536
+21  com.apple.CoreFoundation              0x10d659774 __CFRunLoopRun + 960
+20  com.apple.CoreFoundation              0x10d65f065 __CFRunLoopDoSources0 + 203
+19  com.apple.CoreFoundation              0x10d65f860 __CFRunLoopDoSource0 + 157
+18  com.apple.CoreFoundation              0x10d65f91e __CFRUNLOOP_IS_CALLING_OUT_TO_A_SOURCE0_PERFORM_FUNCTION__ + 17
+17  com.apple.UIKitCore                   0x1382117a4 runloopSourceCallback + 68
+16  com.apple.UIKitCore                   0x13821267f schedulerStepScheduledMainSection + 165
+15  com.apple.UIKitCore                   0x1374d738c _UIUpdateSequenceRun + 55
+14  com.apple.UIKitCore                   0x138212d42 __setupUpdateSequence_block_invoke_2 + 437
+13  com.apple.UIKitCore                   0x13832b40f _UIApplicationFlushCATransaction + 74
+12  com.apple.UIKitCore                   0x13832b311 _cleanUpAfterCAFlushAndRunDeferredBlocks + 71
+11  com.apple.UIKitCore                   0x13833c8b7 _runAfterCACommitDeferredBlocks + 409
+10  com.apple.UIKitCore                   0x138a08010 -[_UIAfterCACommitQueue flush] + 189
+9   com.apple.UIKitCore                   0x138a07b2a -[_UIAfterCACommitBlock run] + 55
+8   com.apple.UIKitCore                   0x13862c62f -[UITableView _userSelectRowAtPendingSelectionIndexPath:] + 247
+7   com.apple.UIKitCore                   0x13862c51d -[UITableView _userSelectRowAtPendingSelectionIndexPath:animatedSelection:] + 384
+6   com.apple.UIKitCore                   0x13862c128 -[UITableView _selectRowAtIndexPath:animated:scrollPosition:notifyDelegate:isCellMultiSelect:deselectPrevious:performCustomSelectionAction:] + 2217
+5   com.nj.-.MemoryGraphDemo              0x104caecaf -[SceneTableViewController tableView:didSelectRowAtIndexPath:] + 255
+4   com.nj.-.MemoryGraphDemo              0x104caecfc -[SceneTableViewController trigerRetainCycles] + 28
+3   libobjc.A.dylib                       0x10d2d0d49 +[NSObject new] + 18
+2   libobjc.A.dylib                       0x10d2c9ddd _objc_rootAllocWithZone + 47
+1   libsystem_malloc.dylib                0x111200117 _calloc + 107
+0   libsystem_malloc.dylib                0x11121793e _malloc_zone_calloc_instrumented_or_legacy + 269 
+====
+    2 (80 bytes) ROOT CYCLE: <LeaksHelper 0x6000012ccdc0> [32]
+       1 (48 bytes) __strong _callback --> ROOT CYCLE: <__NSMallocBlock__ 0x600001cb47e0> [48]  MemoryGraphDemo  __46-[SceneTableViewController trigerRetainCycles]_block_invoke  0x104caed90
+          __strong [capture] --> CYCLE BACK TO <LeaksHelper 0x6000012ccdc0> [32]
+
+STACK OF 1 INSTANCE OF 'ROOT LEAK: <NSArray>':
+30  dyld                                  0x204ec42cd start + 1805
+29  dyld_sim                              0x10d342478 start_sim + 10
+28  com.nj.-.MemoryGraphDemo              0x104caf9ae main + 110
+27  com.apple.UIKitCore                   0x138331b7c UIApplicationMain + 123
+26  com.apple.UIKitCore                   0x13832cc3b -[UIApplication _run] + 875
+25  com.apple.GraphicsServices            0x11f2760cb GSEventRunModal + 137
+24  com.apple.CoreFoundation              0x10d658fb3 CFRunLoopRunSpecific + 536
+23  com.apple.CoreFoundation              0x10d659774 __CFRunLoopRun + 960
+22  com.apple.CoreFoundation              0x10d65f065 __CFRunLoopDoSources0 + 203
+21  com.apple.CoreFoundation              0x10d65f860 __CFRunLoopDoSource0 + 157
+20  com.apple.CoreFoundation              0x10d65f91e __CFRUNLOOP_IS_CALLING_OUT_TO_A_SOURCE0_PERFORM_FUNCTION__ + 17
+19  com.apple.UIKitCore                   0x1382117a4 runloopSourceCallback + 68
+18  com.apple.UIKitCore                   0x13821267f schedulerStepScheduledMainSection + 165
+17  com.apple.UIKitCore                   0x1374d738c _UIUpdateSequenceRun + 55
+16  com.apple.UIKitCore                   0x138212d42 __setupUpdateSequence_block_invoke_2 + 437
+15  com.apple.UIKitCore                   0x13832b40f _UIApplicationFlushCATransaction + 74
+14  com.apple.UIKitCore                   0x13832b311 _cleanUpAfterCAFlushAndRunDeferredBlocks + 71
+13  com.apple.UIKitCore                   0x13833c8b7 _runAfterCACommitDeferredBlocks + 409
+12  com.apple.UIKitCore                   0x138a08010 -[_UIAfterCACommitQueue flush] + 189
+11  com.apple.UIKitCore                   0x138a07b2a -[_UIAfterCACommitBlock run] + 55
+10  com.apple.UIKitCore                   0x13862c62f -[UITableView _userSelectRowAtPendingSelectionIndexPath:] + 247
+9   com.apple.UIKitCore                   0x13862c51d -[UITableView _userSelectRowAtPendingSelectionIndexPath:animatedSelection:] + 384
+8   com.apple.UIKitCore                   0x13862c128 -[UITableView _selectRowAtIndexPath:animated:scrollPosition:notifyDelegate:isCellMultiSelect:deselectPrevious:performCustomSelectionAction:] + 2217
+7   com.nj.-.MemoryGraphDemo              0x104caecaf -[SceneTableViewController tableView:didSelectRowAtIndexPath:] + 255
+6   com.nj.-.MemoryGraphDemo              0x104caef91 -[SceneTableViewController trigerNoActiveReferences] + 97
+5   com.apple.CoreFoundation              0x10d6f07ce +[NSArray arrayWithObjects:count:] + 40
+4   com.apple.CoreFoundation              0x10d748c1f __NSSingleObjectArrayI_new + 38
+3   com.apple.CoreFoundation              0x10d716e97 __CFAllocateObject + 11
+2   libobjc.A.dylib                       0x10d2c9d47 class_createInstance + 62
+1   libsystem_malloc.dylib                0x111200117 _calloc + 107
+0   libsystem_malloc.dylib                0x11121793e _malloc_zone_calloc_instrumented_or_legacy + 269 
+====
+    1 (16 bytes) ROOT LEAK: <NSArray 0x600001000160> [16]
+
