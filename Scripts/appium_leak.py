@@ -9,7 +9,9 @@ import subprocess
 import os
 
 cur_dirctory = os.getcwd()
-file_path =  f"{cur_dirctory}/app/MemoryGraphDemo"
+app_name = "MemoryGraphDemo"
+output_dir =  f"{cur_dirctory}/output"
+app_file_path = f"{cur_dirctory}/app/{app_name}.app"
 
 def init_driver():
     
@@ -17,7 +19,7 @@ def init_driver():
 
     options.device_name = 'iPhone 16 Pro'
     options.platform_version = '18.0'
-    options.app = f"{file_path}.app" 
+    options.app = app_file_path
     options.automation_name = 'XCUITest'
 
     options.process_arguments = {'env': {'MallocStackLogging': 'YES'}}
@@ -31,7 +33,7 @@ def init_driver():
     return driver
 
 def export_memory_graph():
-    subprocess.run(f"leaks MemoryGraphDemo -outputGraph '{file_path}'", shell=True)
+    subprocess.run(f"leaks MemoryGraphDemo -outputGraph '{output_dir}/{app_name}'", shell=True)
     
     
 def click(driver, name):
@@ -55,7 +57,7 @@ def test(driver):
     click(driver, "Dynamic Indirect Retain Cycles")
 
 def analysis():
-    subprocess.run(f"leaks {file_path}.memgraph -quiet > {cur_dirctory}/app/analysis.txt", shell=True)
+    subprocess.run(f"leaks {output_dir}/{app_name}.memgraph -quiet > {output_dir}/analysis.txt", shell=True)
 
 def main():
     driver = init_driver()
